@@ -1,0 +1,802 @@
+/* General Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fae1dd;
+  }
+
+/* Fullscreen background container */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
+    gap: 10px;
+    z-index: -1; /* Behind all content */
+    overflow: hidden;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+    text-align: center;
+}
+
+.title {
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease;
+}
+
+.button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    color: white;
+    background: #ff6f61;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(255, 111, 97, 0.5);
+}
+
+.button:hover {
+    background: #ff4d3d;
+    box-shadow: 0 6px 20px rgba(255, 77, 61, 0.6);
+    transform: scale(1.1);
+}
+
+/* Floating Hearts */
+.hearts-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floating-heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.7);
+    clip-path: polygon(50% 0%, 61% 25%, 98% 35%, 75% 58%, 79% 91%, 50% 75%, 21% 91%, 25% 58%, 2% 35%, 39% 25%);
+    animation: float 8s infinite ease-in-out;
+}
+
+.floating-heart:nth-child(1) {
+    top: 90%;
+    left: 10%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+    transform: scale(0.8);
+}
+
+.floating-heart:nth-child(2) {
+    top: 100%;
+    left: 50%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+    transform: scale(1);
+}
+
+.floating-heart:nth-child(3) {
+    top: 95%;
+    left: 80%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Letter Page Styles */
+.letter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fdf6e4; /* Soft beige background */
+    padding: 20px;
+    position: relative;
+    overflow: hidden; /* Ensures the floating elements don't go outside the bounds */
+}
+
+.letter {
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+}
+
+.letter h1 {
+    font-size: 3rem;
+    color: #ff6f61;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.letter p {
+    font-size: 1.5rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #ff6f61;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #ff4d3d;
+    transform: scale(1.1);
+}
+
+/* Floating Strawberries */
+.stars-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floating-star {
+    position: absolute;
+    font-size: 1.5rem; /* Adjust emoji size */
+    animation: floatStrawberry 8s infinite ease-in-out;
+    transform-origin: center;
+}
+
+.floating-star:nth-child(1) {
+    top: 100%;
+    left: 20%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+    transform: scale(0.8);
+}
+
+.floating-star:nth-child(2) {
+    top: 100%;
+    left: 40%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+    transform: scale(1);
+}
+
+.floating-star:nth-child(3) {
+    top: 100%;
+    left: 60%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+    transform: scale(1.2);
+}
+
+.floating-star:nth-child(4) {
+    top: 100%;
+    left: 80%;
+    animation-duration: 5s;
+    animation-delay: 1.5s;
+    transform: scale(0.9);
+}
+
+.floating-star:nth-child(5) {
+    top: 100%;
+    left: 10%;
+    animation-duration: 9s;
+    animation-delay: 2.5s;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatStrawberry {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.container {
+    position: relative;
+  }
+.valentines {
+    position: relative;
+    top:50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+  }
+.envelope {
+    position: relative;
+    width: 300px;
+    height:200px;
+    background-color: #f08080; 
+  }
+  
+.envelope:before {
+    background-color: #f08080; 
+    content:"";
+    position: absolute;
+    width: 212px;
+    height: 212px;
+    transform: rotate(45deg);
+    top:-105px;
+    left:44px;
+    border-radius:30px 0 0 0;
+  }
+  
+.card {
+    position: absolute;
+    background-color: #eae2b7;
+    width: 270px;
+    height: 170px;
+    top:5px;
+    left:15px;
+    box-shadow: -5px -5px 100px rgba(0,0,0,0.4); 
+  }
+  
+.card:before {
+    content:"";
+    position: absolute;
+    border:3px solid #003049;
+    border-style: dotted;
+    width: 240px;
+    heighT: 140px;
+    left:12px;
+    top:12px;
+  }
+  
+.text {
+    position: absolute;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 28px;
+    text-align: center;
+    line-height:25px;
+    top:19px;
+    left:85px;
+    color: #003049;
+  }
+  
+.heart {
+    background-color: #d62828;
+    display: inline-block;
+    height: 30px;
+    margin: 0 10px;
+    position: relative;
+    top: 110px;
+    left:105px;
+    transform: rotate(-45deg);
+    width: 30px;
+  }
+  
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: #d62828;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+  }
+  
+.heart:before {
+    top: -15px;
+    left: 0;
+  }
+  
+.heart:after {
+    left: 15px;
+    top: 0;
+  }
+.front {
+    position: absolute;
+    border-right: 180px solid #f4978e;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    left:120px;
+    top:5px;
+    width:0;
+    height:0;
+    z-index:10;
+  }
+  
+.front:before {
+    position: absolute;
+    content:"";
+    border-left: 300px solid #f8ad9d;
+    border-top: 195px solid transparent;
+    left:-120px;
+    top:-95px;
+    width:0;
+    height:0;
+  }
+.shadow {
+    position: absolute;
+    width: 330px;
+    height: 25px;
+    border-radius:50%;
+    background-color: rgba(0,0,0,0.3);
+    top:265px;
+    left:-15px;
+    animation: scale 3s linear infinite;
+    z-index:-1;
+  }
+
+@keyframes up {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+
+@keyframes scale {
+    0%, 100% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(0.85);
+    }
+  }
+
+.hearts {
+    position: absolute  
+  }
+  
+.one, .two, .three, .four, .five {
+    background-color: red;
+    display: inline-block;
+    height: 10px;
+    margin: 0 10px;
+    position: relative;
+    transform: rotate(-45deg);
+    width: 10px;
+    top:50px;
+  }
+  
+.one:before,
+.one:after, .two:before, .two:after, .three:before, .three:after, .four:before, .four:after, .five:before, .five:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+  }
+  
+.one:before, .two:before, .three:before, .four:before, .five:before {
+    top: -5px;
+    left: 0;
+  }
+  
+.one:after, .two:after, .three:after, .four:after, .five:after {
+    left: 5px;
+    top: 0;
+  }
+    
+.one {
+    left:10px;
+    animation: heart 1s ease-out infinite; 
+  }
+  
+.two {
+    left:30px;
+    animation: heart 2s ease-out infinite; 
+  }
+  
+.three {
+    left:50px;
+    animation: heart 1.5s ease-out infinite;
+  }
+  
+.four {
+    left:70px;
+    animation: heart 2.3s ease-out infinite;
+  }
+  
+.five {
+    left:90px;
+    animation: heart 1.7s ease-out infinite;
+  }
+  
+@keyframes heart {
+    0%{
+      transform: translateY(0) rotate(-45deg) scale(0.3);
+      opacity: 1;
+    }
+    100%{
+      transform: translateY(-150px) rotate(-45deg) scale(1.3);
+      opacity: 0.5;
+    }
+  }
+
+
+/* hovering images */
+
+
+/* Position the portrait image container in a corner of the screen */
+.portrait-container {
+  position: fixed;
+  top: 90px; /* Adjust as needed */
+  right: 75px; /* Adjust as needed */
+  width: 150px; /* Width of the image */
+  height: 200px; /* Height of the image */
+  border: 3px solid rgba(255, 255, 255, 0.3); /* Soft white border with low opacity */
+  border-radius: 15px; /* Rounded corners for the outline */
+  overflow: hidden;
+  transition: all 0.5s ease-in-out; /* Smooth transition for border and opacity */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Initially hide the image */
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fits well inside the container */
+  opacity: 0; /* Hide the image */
+  transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+}
+
+/* On hover, show the image, and change border style */
+.portrait-container:hover {
+  width: 200px; /* Increase width on hover */
+  height: 250px; /* Increase height on hover */
+  border-radius: 30px; /* More rounded corners on hover */
+  border-color: rgba(255, 255, 255, 0.8); /* Brighter white with slightly more opacity */
+  animation: borderAnimation 1s infinite alternate; /* Cozy border animation */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* On hover, show the image */
+.portrait-container:hover .portrait-image {
+  opacity: 1; /* Show the image on hover */
+}
+
+/* Animation for the border (cozy animation) */
+@keyframes borderAnimation {
+  0% {
+      border-color: rgba(255, 255, 255, 0.3); /* Initial border with low opacity */
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Soft glow effect */
+  }
+  50% {
+      border-color: rgba(255, 255, 255, 0.6); /* Brighter white */
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Stronger glow effect */
+  }
+  100% {
+      border-color: rgba(255, 255, 255, 0.8); /* Even brighter white */
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.9); /* Glowing effect */
+  }
+}
+
+
+
+
+/* Hovering over the video */
+
+
+/* Position the portrait video container in a corner of the screen */
+.portrait-container_2 {
+  position: fixed;
+  bottom: 140px; /* Adjust as needed */
+  left: 150px; /* Adjust as needed */
+  width: 150px; /* Width of the video */
+  height: 200px; /* Height of the video */
+  border: 3px solid rgba(255, 255, 255, 0.3); /* Soft white border with low opacity */
+  border-radius: 15px; /* Rounded corners for the outline */
+  overflow: hidden;
+  transition: all 0.5s ease-in-out; /* Smooth transition for border and opacity */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Initially hide the video */
+.portrait-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video fits well inside the container */
+  opacity: 0; /* Hide the video initially */
+  transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+}
+
+/* On hover, show the video, and change border style */
+.portrait-container_2:hover {
+  width: 200px; /* Increase width on hover */
+  height: 250px; /* Increase height on hover */
+  border-radius: 30px; /* More rounded corners on hover */
+  border-color: rgba(255, 255, 255, 0.8); /* Brighter white with slightly more opacity */
+  animation: borderAnimation 1s infinite alternate; /* Cozy border animation */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* On hover, show the video */
+.portrait-container_2:hover .portrait-video {
+  opacity: 1; /* Show the video on hover */
+}
+
+/* Animation for the border (cozy animation) */
+@keyframes borderAnimation {
+  0% {
+      border-color: rgba(255, 255, 255, 0.3); /* Initial border with low opacity */
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Soft glow effect */
+  }
+  50% {
+      border-color: rgba(255, 255, 255, 0.6); /* Brighter white */
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Stronger glow effect */
+  }
+  100% {
+      border-color: rgba(255, 255, 255, 0.8); /* Even brighter white */
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.9); /* Glowing effect */
+  }
+}
+
+
+
+
+/* hover square shape */
+
+
+
+/* Position the square image container */
+.square-container {
+  position: fixed;
+  top: 50px; /* Position it from the top */
+  left: 50px; /* Position it from the left */
+  width: 150px; /* Set initial width */
+  height: 150px; /* Set initial height to make it square */
+  border: 3px solid rgba(255, 255, 255, 0.3); /* Soft white border with low opacity */
+  border-radius: 15px; /* Rounded corners for a smooth effect */
+  overflow: hidden;
+  transition: all 0.5s ease-in-out; /* Smooth transition for size and border */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Initially hide the image */
+.square-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image fits well inside the container */
+  opacity: 0; /* Hide the image initially */
+  transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+}
+
+/* On hover, show the image, and change the border style */
+.square-container:hover {
+  width: 200px; /* Increase width on hover */
+  height: 200px; /* Increase height on hover */
+  border-radius: 25px; /* More rounded corners on hover for smoother effect */
+  border-color: rgba(255, 255, 255, 0.8); /* Brighter white with slightly more opacity */
+  animation: borderAnimation 1s infinite alternate; /* Cozy border animation */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* On hover, show the image */
+.square-container:hover .square-image {
+  opacity: 1; /* Show the image on hover */
+}
+
+/* Animation for the border (cozy animation) */
+@keyframes borderAnimation {
+  0% {
+      border-color: rgba(255, 255, 255, 0.3); /* Initial border with low opacity */
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Soft glow effect */
+  }
+  50% {
+      border-color: rgba(255, 255, 255, 0.6); /* Brighter white */
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Stronger glow effect */
+  }
+  100% {
+      border-color: rgba(255, 255, 255, 0.8); /* Even brighter white */
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.9); /* Glowing effect */
+  }
+}
+
+
+/* background music */
+
+/* Music Controller Styles */
+.music-controller {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.music-btn {
+  background-color: rgba(255, 255, 255, 0.3); /* Low-opacity white button */
+  border: none;
+  border-radius: 50%; /* Circular button */
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  color: #ff6f61; /* Matching theme color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.music-btn:hover {
+  background-color: rgba(255, 255, 255, 0.6); /* Brighter white on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  transform: scale(1.1); /* Slight scaling effect */
+}
+
+
+/* hover rectangle */
+
+/* Position the landscape container in a corner of the screen */
+.landscape-container {
+  position: fixed;
+  bottom: 70px; /* Adjust as needed */
+  right: 100px; /* Adjust as needed */
+  width: 300px; /* Width of the video/photo */
+  height: 170px; /* Height of the video/photo */
+  border: 3px solid rgba(255, 255, 255, 0.3); /* Soft white border with low opacity */
+  border-radius: 20px; /* Rounded corners for the outline */
+  overflow: hidden;
+  transition: all 0.5s ease-in-out; /* Smooth transition for border and opacity */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Initially hide the content */
+.landscape-video, 
+.landscape-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the content fits well inside the container */
+  opacity: 0; /* Hide the video/photo initially */
+  transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+}
+
+/* On hover, show the content and change border style */
+.landscape-container:hover {
+  width: 320px; /* Increase width on hover */
+  height: 190px; /* Increase height on hover */
+  border-radius: 30px; /* More rounded corners on hover */
+  border-color: rgba(255, 182, 193, 0.8); /* Pinkish white with more opacity */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+  animation: borderAnimation 1s infinite alternate; /* Cozy border animation */
+}
+
+/* On hover, show the video/photo */
+.landscape-container:hover .landscape-video, 
+.landscape-container:hover .landscape-photo {
+  opacity: 1; /* Show the content on hover */
+}
+
+/* Animation for the border (cozy animation) */
+@keyframes borderAnimation {
+  0% {
+      border-color: rgba(255, 182, 193, 0.3); /* Initial border with low opacity */
+      box-shadow: 0 0 10px rgba(255, 182, 193, 0.5); /* Soft glow effect */
+  }
+  50% {
+      border-color: rgba(255, 182, 193, 0.6); /* Brighter pinkish-white */
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.7); /* Stronger glow effect */
+  }
+  100% {
+      border-color: rgba(255, 182, 193, 0.8); /* Even brighter pinkish-white */
+      box-shadow: 0 0 30px rgba(255, 182, 193, 0.9); /* Glowing effect */
+  }
+}
+
+
+/* Hover photo3.jpeg */
+
+
+/* Position the portrait image container in a corner of the screen */
+.portrait-container_3 {
+  position: fixed;
+  top: 220px; /* Adjust as needed */
+  left: 250px; /* Adjust as needed */
+  width: 150px; /* Width of the image */
+  height: 200px; /* Height of the image */
+  border: 3px solid rgba(255, 255, 255, 0.3); /* Soft white border with low opacity */
+  border-radius: 15px; /* Rounded corners for the outline */
+  overflow: hidden;
+  transition: all 0.5s ease-in-out; /* Smooth transition for border and opacity */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Initially hide the image */
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fits well inside the container */
+  opacity: 0; /* Hide the image */
+  transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+}
+
+/* On hover, show the image, and change border style */
+.portrait-container_3:hover {
+  width: 200px; /* Increase width on hover */
+  height: 250px; /* Increase height on hover */
+  border-radius: 30px; /* More rounded corners on hover */
+  border-color: rgba(255, 255, 255, 0.8); /* Brighter white with slightly more opacity */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+  animation: borderAnimation 1s infinite alternate; /* Cozy border animation */
+}
+
+/* On hover, show the image */
+.portrait-container_3:hover .portrait-image {
+  opacity: 1; /* Show the image on hover */
+}
+
+/* Animation for the border (cozy animation) */
+@keyframes borderAnimation {
+  0% {
+      border-color: rgba(255, 255, 255, 0.3); /* Initial border with low opacity */
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Soft glow effect */
+  }
+  50% {
+      border-color: rgba(255, 255, 255, 0.6); /* Brighter white */
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Stronger glow effect */
+  }
+  100% {
+      border-color: rgba(255, 255, 255, 0.8); /* Even brighter white */
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.9); /* Glowing effect */
+  }
+}

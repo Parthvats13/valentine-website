@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can't help falling in love</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="music-controller">
+        <button id="mute-unmute-btn" class="music-btn" aria-label="Mute/Unmute">
+            🔊
+        </button>
+    </div>
+    <audio id="background-music" loop>
+        <source src="{{ url_for('static', filename='audio/bgm1.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    {% block content %}{% endblock %}
+</body>
+</html>

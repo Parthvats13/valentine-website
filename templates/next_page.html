@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Thank You{% endblock %}
+
+{% block content %}
+<div class="container">  
+    <div class="valentines">
+      <div class="envelope"></div>
+      <div class="front"></div>
+      <div class="card">
+      <div class="text">Will</br>you be my</br> Valentine?</div>
+      <div class="heart"</div>
+      </div>
+      <div class="hearts">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five"></div>
+      </div>
+    </div>
+    </div>
+    <div class="shadow"></div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.container').mouseenter(function () {
+                $('.card').stop().animate({
+                    top: '-90px'
+                }, 'slow');
+            }).mouseleave(function () {
+                $('.card').stop().animate({
+                    top: 0
+                }, 'slow');
+            });
+        });
+      </script>
+{% endblock %}
